@@ -1,0 +1,33 @@
+nama:jeri andanu
+1.create databases myshop;
+ 
+2.Membuat Table di Dalam Database
+create table users(id INTEGER AUTO_INCREMENT PRIMARY KEY,name varchar(255),email varchar(255),password varchar(25
+5));
+
+create table categories(id INTEGER AUTO_INCREMENT PRIMARY KEY,name varchar(255));
+
+create table items(id INTEGER AUTO_INCREMENT PRIMARY KEY,name varchar(255),description varchar(255),price integer,stock integer, category_id integer, FOREIGN KEY (category_id) REFERENCES categories(id));
+
+3.Memasukkan Data pada Table
+insert into users(name,email,password)values ("jeri andanu" , "jeriandanu533@gmail.com" , "kamusayangdia");
+
+ insert into categories(name)values ('hp'),('laptop'),('komputer');
+
+insert into items(name,description,price,stock,category_id)values('advan','belisekaran bro','15000000','2000','2');
+
+4.mengambil data base
+select id, name, email from users;
+
+select * from items where price > 1000000;
+
+select * from items where name like '%van%';
+
+SELECT items.id, items.name, items.description, items.price, items.stock, categories.name AS kategori
+    -> FROM items
+    -> INNER JOIN categories ON items.category_id = categories.id;
+
+5.Mengubah Data dari Database
+UPDATE items
+    -> SET price = 2500000
+    -> WHERE name = 'advan';
