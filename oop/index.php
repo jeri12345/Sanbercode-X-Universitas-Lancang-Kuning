@@ -3,14 +3,14 @@
 require_once 'Ape.php';
 require_once 'Frog.php';
 
-$shaun = new Frog('Shaun');
+$shaun = new Animal('Shaun');
 $buduk = new Frog('Buduk');
 $keraSakti = new Ape('Kera Sakti');
 
 echo "Name: " . $shaun->getName() . "<br>";
 echo "Legs: " . $shaun->getLegs() . "<br>";
 echo "Cold Blooded: " . ($shaun->isColdBlooded() ? 'Yes' : 'No') . "<br>";
-echo "Jump: " . $shaun->makeSound() . "<br><br>";
+
 
 echo "Name: " . $buduk->getName() . "<br>";
 echo "Legs: " . $buduk->getLegs() . "<br>";
